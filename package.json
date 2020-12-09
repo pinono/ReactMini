@@ -1,0 +1,25 @@
+{
+  "name": "reactmini",
+  "version": "1.0.0",
+  "description": "learn",
+  "main": "index.js",
+  "scripts": {
+    "start" : "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinono/ReactMini.git"
+  },
+  "devDependencies": {
+    "babel-core" : "^6.26.3",
+    "babel-plugin-transform-react-jsx" : "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler" : "^1.12.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pinono/ReactMini/issues"
+  },
+  "homepage": "https://github.com/pinono/ReactMini#readme"
+}
