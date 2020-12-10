@@ -170,12 +170,17 @@ function render(vnode, container) {
   var dom = document.createElement(tag);
 
   if (attrs) {
-    Object.keys(attrs).forEach(function (key) {
+    for (var key in attrs) {
+      console.log(key);
       var value = attrs[key];
-    });
-  }
+      setAttribute(dom, key, value);
+    }
+  } // 递归调用
 
-  console.log(dom);
+
+  vnode.childrens.forEach(function (child) {
+    return render(child, dom);
+  });
   return container.appendChild(dom);
 } // 设置属性
 
@@ -224,7 +229,7 @@ var _reactDom = _interopRequireDefault(require("./react-dom"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ele = _react.default.createElement("div", {
+var ele = _react.default.createElement("section", {
   className: "active",
   title: "123"
 }, "helleo,", _react.default.createElement("span", null, "React~"));
@@ -258,7 +263,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49846" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51973" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

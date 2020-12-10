@@ -1,9 +1,9 @@
 import React from './react'
 import ReactDom from './react-dom'
 const ele = (
-    <div className="active" title="123">
+    <section className="active" title="123">
         helleo,<span>React~</span>
-    </div>
+    </section>
 )
 
 ReactDom.render(ele,document.querySelector('#root'))

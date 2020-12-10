@@ -11,12 +11,14 @@ function render (vnode,container) {
     const {tag,attrs} = vnode
     const dom = document.createElement(tag)
     if (attrs) {
-        Object.keys(attrs).forEach(key => {
-            const value =  attrs[key]
-
-        })
+        for(let key in attrs) {
+            console.log(key)
+            const value = attrs[key]
+            setAttribute(dom,key,value)
+        }
     }
-    console.log(dom)
+    // 递归调用
+    vnode.childrens.forEach(child=> render(child,dom))
     return container.appendChild(dom)
 
 }
